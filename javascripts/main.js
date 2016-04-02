@@ -6,6 +6,8 @@ var win = 0;
 
 var agan = 1;
 
+var moves = 0;
+
 var dye = ["red", "blue", "yellow", "green", "violet", "black"];
 
 function cell(x, y, c) {
@@ -58,6 +60,7 @@ function check() {
 }
 
 function move(cell) {
+    moves++;
     $("table").animate({opacity: 0.4}, 50);
     $("table").animate({opacity: 1}, 250);
     var pretty = $(cell).attr("id");
@@ -67,7 +70,7 @@ function move(cell) {
     win = 1;
     check();
     if (win==1){
-        alert("DAMNDAMNDMANDAMNDAMN");
+        alert("DAMNDAMNDMANDAMNDAMNDAMENEAINDLA YOU TOOK "+ moves + "MOVES!! YOU CAN DO BETTER!");
     }
 }
 
